@@ -1,5 +1,7 @@
-final_year = int(input("Enter the final year: "))
-print("Future Leap Years:")
-for year in range(current_year + 1, final_year + 1):
-     if year % 4 == 0 and (year % 100 != 0 or year % 400 == 0):
-        print(year)
+from datetime import datetime
+
+f = int(input("Enter final year: "))
+cy = datetime.now().year
+print("The leap years are:")
+print([y for y in range(cy + 1, f + 1) if f > cy and (y % 4 == 0 and (y % 100 != 0 or y % 400 == 0))]
+      or "Must be greater than current year.")
